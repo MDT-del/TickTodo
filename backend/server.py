@@ -368,7 +368,7 @@ async def get_stats():
     # Tasks due today
     today = datetime.utcnow().date()
     due_today = tasks_collection.count_documents({
-        "due_date": today,
+        "due_date": today.isoformat(),
         "status": TaskStatus.PENDING
     })
     
