@@ -10,6 +10,7 @@ import {
   FaChevronDown,
   FaChevronUp
 } from 'react-icons/fa';
+import persianDateUtils from '../utils/persianDate';
 
 const TaskCard = ({ task, onToggle, onEdit, onDelete, lists, tags }) => {
   const [showDetails, setShowDetails] = useState(false);
