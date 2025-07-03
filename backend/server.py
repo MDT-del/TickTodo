@@ -119,8 +119,7 @@ def task_dict_to_model(task_dict: dict) -> dict:
             task_dict['updated_at'] = task_dict['updated_at'].isoformat()
         if 'completed_at' in task_dict and task_dict['completed_at']:
             task_dict['completed_at'] = task_dict['completed_at'].isoformat()
-        if 'due_date' in task_dict and task_dict['due_date']:
-            task_dict['due_date'] = task_dict['due_date'].isoformat()
+        # due_date is already stored as string, no conversion needed
     return task_dict
 
 def get_today_persian():
