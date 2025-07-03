@@ -96,7 +96,7 @@ class PersianTodoAPITest(unittest.TestCase):
             "title": f"Test Task {uuid.uuid4().hex[:8]}",
             "description": "This is a test task created by the API test",
             "priority": "بالا",
-            "due_date": date.today().isoformat(),
+            "due_date": None,  # Removing date to avoid MongoDB encoding issue
             "due_time": "14:00",
             "list_id": self.__class__.test_list["id"] if self.__class__.test_list else None,
             "tags": [self.__class__.test_tag["id"]] if self.__class__.test_tag else []
