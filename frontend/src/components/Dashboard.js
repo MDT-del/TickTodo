@@ -14,8 +14,7 @@ import persianDateUtils from '../utils/persianDate';
 const Dashboard = ({ stats, recentTasks, onTaskClick }) => {
   const formatDate = (dateString) => {
     if (!dateString) return '';
-    const date = new Date(dateString);
-    return date.toLocaleDateString('fa-IR');
+    return persianDateUtils.formatRelativePersianDate(dateString);
   };
 
   const getPriorityColor = (priority) => {
