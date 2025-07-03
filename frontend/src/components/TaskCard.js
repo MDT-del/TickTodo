@@ -104,10 +104,16 @@ const TaskCard = ({ task, onToggle, onEdit, onDelete, lists, tags }) => {
               {/* Due Date */}
               {task.due_date && (
                 <div className={`flex items-center space-x-1 space-x-reverse text-xs ${
-                  isOverdue ? 'text-red-600' : 'text-gray-600'
+                  isOverdue ? 'text-red-600' : persianDateUtils.isToday(task.due_date) ? 'text-orange-600' : 'text-gray-600'
                 }`}>
                   <FaCalendarAlt className="w-3 h-3" />
                   <span>{formatDate(task.due_date)}</span>
+                  {persianDateUtils.isToday(task.due_date) && (
+                    <span className="bg-orange-100 text-orange-800 px-1 rounded text-xs">امروز</span>
+                  )}
+                  {isOverdue && (
+                    <span className="bg-red-100 text-red-800 px-1 rounded text-xs">عقب‌مانده</span>
+                  )}
                 </div>
               )}
 
