@@ -24,7 +24,7 @@ const TaskForm = ({ task, lists, tags, onSubmit, onClose }) => {
         title: task.title || '',
         description: task.description || '',
         priority: task.priority || 'متوسط',
-        due_date: task.due_date ? new Date(task.due_date).toISOString().split('T')[0] : '',
+        due_date: task.due_date || '',
         due_time: task.due_time || '',
         list_id: task.list_id || '',
         tags: task.tags || []
