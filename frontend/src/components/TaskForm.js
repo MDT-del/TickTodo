@@ -203,14 +203,12 @@ const TaskForm = ({ task, lists, tags, onSubmit, onClose }) => {
               <div className="form-group">
                 <label className="form-label">
                   <FaCalendarAlt className="inline w-4 h-4 ml-1" />
-                  تاریخ سررسید
+                  تاریخ سررسید (شمسی)
                 </label>
-                <input
-                  type="date"
-                  name="due_date"
+                <PersianDatePicker
                   value={formData.due_date}
-                  onChange={handleInputChange}
-                  className="input-field"
+                  onChange={(date) => setFormData(prev => ({ ...prev, due_date: date }))}
+                  placeholder="انتخاب تاریخ شمسی"
                 />
               </div>
 
@@ -227,6 +225,11 @@ const TaskForm = ({ task, lists, tags, onSubmit, onClose }) => {
                   onChange={handleInputChange}
                   className="input-field"
                 />
+                {formData.due_time && (
+                  <p className="text-sm text-gray-600 mt-1">
+                    زمان: {persianDateUtils.formatPersianTime(formData.due_time)}
+                  </p>
+                )}
               </div>
             </div>
 
