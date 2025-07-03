@@ -41,13 +41,12 @@ const TaskCard = ({ task, onToggle, onEdit, onDelete, lists, tags }) => {
 
   const formatDate = (dateString) => {
     if (!dateString) return '';
-    const date = new Date(dateString);
-    return date.toLocaleDateString('fa-IR');
+    return persianDateUtils.formatPersianDate(dateString);
   };
 
   const formatTime = (timeString) => {
     if (!timeString) return '';
-    return timeString;
+    return persianDateUtils.formatPersianTime(timeString);
   };
 
   const getList = (listId) => {
