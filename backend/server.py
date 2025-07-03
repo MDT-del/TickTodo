@@ -395,7 +395,7 @@ async def get_stats():
     medium_priority = tasks_collection.count_documents({"priority": Priority.MEDIUM, "status": TaskStatus.PENDING})
     low_priority = tasks_collection.count_documents({"priority": Priority.LOW, "status": TaskStatus.PENDING})
     
-    # Tasks due today
+    # Tasks due today (Persian calendar)
     today = datetime.utcnow().date()
     due_today = tasks_collection.count_documents({
         "due_date": today.isoformat(),
