@@ -1,0 +1,270 @@
+/* App-specific styles */
+.App {
+  text-align: center;
+}
+
+.app-header {
+  @apply bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40;
+}
+
+.app-main {
+  @apply min-h-screen bg-gray-50;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.page-title {
+  @apply text-2xl font-bold text-gray-900 mb-6;
+}
+
+.page-subtitle {
+  @apply text-lg text-gray-600 mb-4;
+}
+
+.stats-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8;
+}
+
+.stat-card {
+  @apply bg-white rounded-lg shadow-card p-6 text-center;
+}
+
+.stat-number {
+  @apply text-3xl font-bold text-gray-900;
+}
+
+.stat-label {
+  @apply text-sm text-gray-600 mt-1;
+}
+
+.tasks-grid {
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-6;
+}
+
+.tasks-column {
+  @apply bg-white rounded-lg shadow-card p-4;
+}
+
+.column-header {
+  @apply flex items-center justify-between mb-4 pb-2 border-b border-gray-200;
+}
+
+.column-title {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.task-count {
+  @apply bg-gray-100 text-gray-600 text-sm px-2 py-1 rounded-full;
+}
+
+.add-task-btn {
+  @apply w-full p-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:border-gray-400 hover:text-gray-600 transition-colors duration-200;
+}
+
+.add-task-btn:hover {
+  @apply bg-gray-50;
+}
+
+.task-form {
+  @apply space-y-4;
+}
+
+.form-group {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.form-select {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+.form-textarea {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none;
+}
+
+.form-actions {
+  @apply flex justify-end space-x-3 space-x-reverse pt-4;
+}
+
+.sidebar-menu {
+  @apply space-y-2;
+}
+
+.sidebar-item {
+  @apply flex items-center space-x-3 space-x-reverse p-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer;
+}
+
+.sidebar-item.active {
+  @apply bg-blue-50 text-blue-600;
+}
+
+.sidebar-icon {
+  @apply w-5 h-5;
+}
+
+.sidebar-text {
+  @apply font-medium;
+}
+
+.sidebar-badge {
+  @apply bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full mr-auto;
+}
+
+.sidebar-badge.active {
+  @apply bg-blue-100 text-blue-700;
+}
+
+.search-bar {
+  @apply relative mb-6;
+}
+
+.search-input {
+  @apply w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+.search-icon {
+  @apply absolute left-3 top-2.5 w-5 h-5 text-gray-400;
+}
+
+.filter-buttons {
+  @apply flex flex-wrap gap-2 mb-4;
+}
+
+.filter-btn {
+  @apply px-3 py-1 text-sm rounded-full border border-gray-300 hover:bg-gray-50 transition-colors duration-200;
+}
+
+.filter-btn.active {
+  @apply bg-blue-600 text-white border-blue-600;
+}
+
+.empty-state {
+  @apply text-center py-12;
+}
+
+.empty-state-icon {
+  @apply w-16 h-16 mx-auto text-gray-400 mb-4;
+}
+
+.empty-state-title {
+  @apply text-xl font-semibold text-gray-900 mb-2;
+}
+
+.empty-state-text {
+  @apply text-gray-600;
+}
+
+.toast-notification {
+  @apply fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50;
+}
+
+.toast-notification.error {
+  @apply bg-red-600;
+}
+
+.toast-notification.warning {
+  @apply bg-yellow-600;
+}
+
+.toast-notification.info {
+  @apply bg-blue-600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    @apply px-3;
+  }
+  
+  .page-title {
+    @apply text-xl;
+  }
+  
+  .stats-grid {
+    @apply grid-cols-2 gap-3;
+  }
+  
+  .stat-card {
+    @apply p-4;
+  }
+  
+  .stat-number {
+    @apply text-2xl;
+  }
+  
+  .tasks-grid {
+    @apply grid-cols-1 gap-4;
+  }
+  
+  .tasks-column {
+    @apply p-3;
+  }
+  
+  .column-title {
+    @apply text-base;
+  }
+  
+  .task-card {
+    @apply p-3;
+  }
+  
+  .form-actions {
+    @apply flex-col space-x-0 space-y-2;
+  }
+  
+  .form-actions button {
+    @apply w-full;
+  }
+  
+  .sidebar-menu {
+    @apply space-y-1;
+  }
+  
+  .sidebar-item {
+    @apply p-2;
+  }
+  
+  .sidebar-text {
+    @apply text-sm;
+  }
+}
+
+/* Dark mode support (for future enhancement) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode {
+    @apply bg-gray-900 text-white;
+  }
+  
+  .dark-mode .task-card {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .dark-mode .app-header {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .dark-mode .sidebar {
+    @apply bg-gray-800;
+  }
+  
+  .dark-mode .sidebar-item:hover {
+    @apply bg-gray-700;
+  }
+  
+  .dark-mode .input-field {
+    @apply bg-gray-800 border-gray-700 text-white;
+  }
+  
+  .dark-mode .form-select {
+    @apply bg-gray-800 border-gray-700 text-white;
+  }
+  
+  .dark-mode .form-textarea {
+    @apply bg-gray-800 border-gray-700 text-white;
+  }
+}
