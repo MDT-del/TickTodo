@@ -9,6 +9,7 @@ import {
   FaList,
   FaTag
 } from 'react-icons/fa';
+import persianDateUtils from '../utils/persianDate';
 
 const Dashboard = ({ stats, recentTasks, onTaskClick }) => {
   const formatDate = (dateString) => {
