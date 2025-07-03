@@ -226,6 +226,11 @@ async def create_task(task: TaskCreate):
     task_dict["updated_at"] = datetime.utcnow()
     task_dict["subtasks"] = []
     
+    # Convert date to string if provided
+    if task_dict.get("due_date"):
+        if isinstance(task_dict["due_date"], date):
+            task_dict["due_date"] = task_dict["due_date"].isoformat()
+    
     result = tasks_collection.insert_one(task_dict)
     if result.inserted_id:
         # Update list task count
