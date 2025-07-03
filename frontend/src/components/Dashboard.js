@@ -42,7 +42,10 @@ const Dashboard = ({ stats, recentTasks, onTaskClick }) => {
       <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-6">
         <h1 className="text-3xl font-bold mb-2">سلام! 👋</h1>
         <p className="text-blue-100 text-lg">
-          خوش آمدید به مدیریت کارهای شما. بیایید امروز را پربار کنیم!
+          خوش آمدید به مدیریت کارهای شما. امروز {persianDateUtils.getCurrentPersianDate()} است
+        </p>
+        <p className="text-blue-100 text-sm mt-1">
+          {persianDateUtils.getCurrentPersianDateTime()}
         </p>
       </div>
 
