@@ -58,7 +58,7 @@ const TaskCard = ({ task, onToggle, onEdit, onDelete, lists, tags }) => {
   };
 
   const isCompleted = task.status === 'تکمیل شده';
-  const isOverdue = task.due_date && new Date(task.due_date) < new Date() && !isCompleted;
+  const isOverdue = persianDateUtils.isOverdue(task.due_date) && !isCompleted;
 
   return (
     <div className={`task-card ${isCompleted ? 'completed' : ''} ${isOverdue ? 'border-red-300' : ''}`}>
