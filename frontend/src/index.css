@@ -185,6 +185,85 @@ code {
   @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
 }
 
+/* Persian Calendar Styles */
+.persian-date-picker {
+  @apply w-full;
+}
+
+.persian-calendar {
+  @apply bg-white border border-gray-300 rounded-lg shadow-lg z-50;
+  font-family: 'Vazir', sans-serif !important;
+  direction: rtl;
+}
+
+.persian-calendar .Calendar__header {
+  @apply bg-blue-600 text-white p-3 rounded-t-lg;
+}
+
+.persian-calendar .Calendar__monthArrowWrapper {
+  @apply bg-blue-700 hover:bg-blue-800 rounded p-1;
+}
+
+.persian-calendar .Calendar__monthYearContainer {
+  @apply text-white font-semibold;
+}
+
+.persian-calendar .Calendar__weekDays {
+  @apply bg-gray-50 border-b border-gray-200;
+}
+
+.persian-calendar .Calendar__weekDay {
+  @apply p-2 text-center text-gray-600 font-medium text-sm;
+}
+
+.persian-calendar .Calendar__day {
+  @apply p-2 text-center hover:bg-blue-50 cursor-pointer transition-colors duration-200 border-b border-gray-100;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.persian-calendar .Calendar__day:hover {
+  @apply bg-blue-50;
+}
+
+.persian-calendar .Calendar__day.-today {
+  @apply bg-blue-100 text-blue-800 font-semibold;
+}
+
+.persian-calendar .Calendar__day.-selected {
+  @apply bg-blue-600 text-white font-semibold;
+}
+
+.persian-calendar .Calendar__day.-selected:hover {
+  @apply bg-blue-700;
+}
+
+.persian-calendar .Calendar__day.-ltr {
+  direction: rtl;
+}
+
+.persian-calendar .Calendar__day.-weekend {
+  @apply text-red-600;
+}
+
+.persian-calendar .Calendar__day.-weekend.-today {
+  @apply bg-red-100 text-red-800;
+}
+
+.persian-calendar .Calendar__day.-weekend.-selected {
+  @apply bg-red-600 text-white;
+}
+
+.persian-calendar .Calendar__day.-otherMonth {
+  @apply text-gray-400;
+}
+
+.persian-calendar .Calendar__day.-otherMonth:hover {
+  @apply bg-gray-50;
+}
+
 /* Loading Spinner */
 .loading-spinner {
   @apply inline-block w-6 h-6 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin;
