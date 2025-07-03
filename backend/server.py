@@ -247,6 +247,11 @@ async def update_task(task_id: str, task_update: TaskUpdate):
     update_data = {k: v for k, v in task_update.dict().items() if v is not None}
     update_data["updated_at"] = datetime.utcnow()
     
+    # Convert date to string if provided
+    if update_data.get("due_date"):
+        if isinstance(update_data["due_date"], date):
+            update_data["due_date"] = update_data["due_date"].isoformat()
+    
     # Handle status change to completed
     if update_data.get("status") == TaskStatus.COMPLETED:
         update_data["completed_at"] = datetime.utcnow()
