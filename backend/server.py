@@ -123,6 +123,35 @@ def task_dict_to_model(task_dict: dict) -> dict:
             task_dict['due_date'] = task_dict['due_date'].isoformat()
     return task_dict
 
+def get_today_persian():
+    """Get today's date in Persian calendar format"""
+    today_persian = khayyam.JalaliDatetime.now()
+    return today_persian.date()
+
+def convert_persian_to_gregorian(persian_date_str):
+    """Convert Persian date string to Gregorian date"""
+    if not persian_date_str:
+        return None
+    try:
+        # Persian date is in YYYY-MM-DD format (Gregorian equivalent)
+        return datetime.strptime(persian_date_str, '%Y-%m-%d').date()
+    except:
+        return None
+
+def is_today_persian(date_obj):
+    """Check if the given date is today in Persian calendar"""
+    if not date_obj:
+        return False
+    
+    if isinstance(date_obj, str):
+        date_obj = convert_persian_to_gregorian(date_obj)
+    
+    if not date_obj:
+        return False
+        
+    today = datetime.utcnow().date()
+    return date_obj == today
+
 # API Routes
 
 @app.get("/api/")
