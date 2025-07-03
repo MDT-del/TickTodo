@@ -158,6 +158,30 @@ def is_today_persian(date_obj):
 async def root():
     return {"message": "Persian Todo API is running", "version": "1.0.0"}
 
+@app.get("/api/persian-date")
+async def get_persian_date():
+    """Get current Persian date information"""
+    try:
+        now = khayyam.JalaliDatetime.now()
+        today = datetime.utcnow().date()
+        
+        return {
+            "persian_date": now.strftime('%Y/%m/%d'),
+            "persian_date_long": now.strftime('%A، %d %B %Y'),
+            "persian_time": now.strftime('%H:%M'),
+            "gregorian_date": today.isoformat(),
+            "day_name": now.strftime('%A'),
+            "month_name": now.strftime('%B'),
+            "year": now.year,
+            "month": now.month,
+            "day": now.day
+        }
+    except Exception as e:
+        return {
+            "persian_date": "تاریخ در دسترس نیست",
+            "error": str(e)
+        }
+
 # Tasks endpoints
 @app.get("/api/tasks", response_model=List[dict])
 async def get_tasks(
